@@ -2,8 +2,12 @@ import type { AppProps } from 'next/app'
 
 import '@/styles/globals.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />
-}
+import { Drawer } from '@/components/layout/drawer'
 
-export default MyApp
+export default function MyApp({ Component, pageProps }: AppProps) {
+	return (
+		<Drawer>
+			<Component {...pageProps} />
+		</Drawer>
+	)
+}
