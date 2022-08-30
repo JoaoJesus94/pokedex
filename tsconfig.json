@@ -3,7 +3,12 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/components/*": ["components/*"],
-			"@/styles/*": ["styles/*"]
+			"@/styles/*": ["styles/*"],
+			"@/lib/*": ["lib/*"],
+			"@/hooks/*": ["hooks/*"],
+			"@/api/*": ["api/*"],
+			"@/types/*": ["types/*"],
+			"@/utils/*": ["utils/*"]
 		},
 		"target": "es5",
 		"lib": ["dom", "dom.iterable", "esnext"],

@@ -7,7 +7,7 @@ export function Navbar() {
 	const { isDarkTheme, toggleTheme } = useSwitchTheme()
 
 	return (
-		<div className="navbar bg-base-300">
+		<nav className="navbar bg-base-300 h-20">
 			<div className="flex-none">
 				<label htmlFor="my-drawer" className="btn btn-square btn-ghost lg:hidden">
 					<FaBars size={24} />
@@ -71,6 +71,6 @@ export function Navbar() {
 					{isDarkTheme ? <FaSun size={24} /> : <FaMoon size={24} />}
 				</button>
 			</div>
-		</div>
+		</nav>
 	)
 }

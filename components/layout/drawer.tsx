@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FaTimes } from 'react-icons/fa'
 
 import { Navbar } from '@/components/layout/navbar'
@@ -6,11 +7,9 @@ export function Drawer({ children }: { children: React.ReactNode }) {
 	return (
 		<div className="drawer drawer-mobile">
 			<input id="my-drawer" type="checkbox" className="drawer-toggle" />
-			<div className="drawer-content">
-				<nav>
-					<Navbar />
-				</nav>
-				<main className="p-2">{children}</main>
+			<div className="drawer-content flex flex-col">
+				<Navbar />
+				<main className="flex-1 p-2">{children}</main>
 			</div>
 			<div className="drawer-side">
 				<label htmlFor="my-drawer" className="drawer-overlay" />
