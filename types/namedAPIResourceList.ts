@@ -1,8 +1,8 @@
 import { NamedAPIResource } from '@/types/namedAPIResource'
 
-export type PokemonListType = {
+export type NamedAPIResourceList = {
 	count: number
-	next: string
-	previous?: string
+	next: string | null
+	previous: string | null
 	results: NamedAPIResource[]
 }
