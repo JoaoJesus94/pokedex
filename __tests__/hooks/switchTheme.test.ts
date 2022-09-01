@@ -51,4 +51,20 @@ describe('useSwitchTheme()', () => {
 		expect(window.matchMedia).toHaveBeenCalled()
 		expect(isDarkTheme).toBe(true)
 	})
+
+	it('should not get value from anywhere and return error from catch', () => {
+		Object.defineProperty(window, 'matchMedia', {
+			value: jest.fn().mockImplementation(() => {
+				throw new Error()
+			}),
+		})
+
+		const {
+			result: {
+				current: { isDarkTheme },
+			},
+		} = renderHook(useSwitchTheme)
+
+		expect(isDarkTheme).toBe(false)
+	})
 })

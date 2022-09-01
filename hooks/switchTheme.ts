@@ -10,7 +10,6 @@ export function useSwitchTheme() {
 
 			return window.matchMedia('(prefers-color-scheme: dark)').matches
 		} catch (error) {
-			console.warn(`Error getting theme preference!`)
 			return false
 		}
 	})
