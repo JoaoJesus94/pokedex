@@ -1,7 +1,7 @@
 import { useSwitchTheme } from '../../hooks/switchTheme'
-import Image, { ImageProps } from 'next/image'
+import Image from 'next/image'
 import React from 'react'
-import { FaBars, FaMoon, FaSun } from 'react-icons/fa'
+import { FaBars, FaMoon, FaSearch, FaSun } from 'react-icons/fa'
 
 export function Navbar() {
 	const { isDarkTheme, toggleTheme } = useSwitchTheme()
@@ -24,27 +24,14 @@ export function Navbar() {
 					<div className="input-group">
 						<input type="text" placeholder="Search…" className="input input-bordered" />
 						<button className="btn btn-square">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-6 w-6"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-								/>
-							</svg>
+							<FaSearch size={24} />
 						</button>
 					</div>
 				</div>
 				<div className="dropdown dropdown-end">
 					<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
 						<div className="w-10 rounded-full">
-							<img src="https://placeimg.com/80/80/people" />
+							<Image src="/avatar.jpg" alt="avatar" width={80} height={80} />
 						</div>
 					</label>
 					<ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52">

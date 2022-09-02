@@ -1,12 +1,17 @@
-import { NamedAPIResource } from '@/types/namedAPIResource'
 import Image from 'next/image'
 
-import { usePokemon } from '@/hooks/api/pokemons'
+import { NamedAPIResource } from '@/types/namedAPIResource'
+
+// import { usePokemon } from '@/hooks/api/pokemons'
 
 export function Card({ pokemon }: { pokemon: NamedAPIResource }) {
-	const { data, isLoading } = usePokemon(pokemon.name)
-
-	if (isLoading) return null
+	//const { data, isLoading } = usePokemon(pokemon.name)
+	const data = {
+		sprites: {
+			front_default: 'https://api.thecatapi.com/v1/images/search',
+		},
+	}
+	//if (isLoading) return null
 	return (
 		<div key={pokemon.name} className="card bg-base-100 shadow-xl">
 			<div className="flex justify-center">
