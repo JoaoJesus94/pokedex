@@ -6,6 +6,7 @@ import { fetchPokemons } from '@/api/pokemon'
 import { usePokemons } from '@/hooks/api/pokemon'
 
 import { Loader } from '@/components/Loader'
+import { Card } from '@/components/PokemonCard'
 
 const Home: NextPage = () => {
 	const { isLoading, data } = usePokemons()
@@ -13,9 +14,9 @@ const Home: NextPage = () => {
 	if (isLoading) <Loader />
 
 	return (
-		<div className="grid gap-4 justify-center grid-cols-[repeat(auto-fit,_minmax(350px,_max-content))]">
+		<div className="grid gap-4 justify-center grid-cols-[repeat(auto-fit,_minmax(300px,_max-content))]">
 			{data?.results.map(pokemon => (
-				<div key={pokemon.name}>{pokemon.name}</div>
+				<Card key={pokemon.name} pokemon={pokemon} />
 			))}
 		</div>
 	)
