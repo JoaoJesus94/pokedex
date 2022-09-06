@@ -3,9 +3,9 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
 
-import '@/styles/globals.css'
-
 import { config } from '@/lib/reactQueryConfig'
+
+import '@/styles/globals.css'
 
 import { Drawer } from '@/components/layout/drawer'
 

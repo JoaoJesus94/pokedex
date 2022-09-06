@@ -7,7 +7,7 @@
 	"singleQuote": true,
 	"trailingComma": "all",
 	"arrowParens": "avoid",
-	"importOrder": ["^@/styles", "^@/types", "^@/mocks", "^@/lib", "^@/utils", "^@/api", "^@/hooks", "^@/components"],
+	"importOrder": ["^@/lib", "^@/mocks", "^@/styles", "^@/api", "^@/types", "^@/utils", "^@/hooks", "^@/components"],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true
 }

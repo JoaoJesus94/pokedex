@@ -1,8 +1,8 @@
 import MockAdapter from 'axios-mock-adapter'
 
-import { mockedPokemonListResponse } from '@/mocks/mockedPokemonListResponse'
-
 import axios from '@/lib/axios'
+
+import { mockedPokemonListResponse } from '@/mocks/mockedPokemonListResponse'
 
 import { fetchPokemons } from '@/api/pokemon'
 
