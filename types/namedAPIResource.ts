@@ -1,4 +1,4 @@
-export type NamedAPIResource = {
-	name: string
+export type NamedAPIResource<T = string> = {
+	name: T
 	url: string
 }
