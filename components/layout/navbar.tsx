@@ -1,5 +1,6 @@
 import { useSwitchTheme } from '../../hooks/switchTheme'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { FaBars, FaMoon, FaSearch, FaSun } from 'react-icons/fa'
 
@@ -14,10 +15,12 @@ export function Navbar() {
 				</label>
 			</div>
 			<div className="flex-1">
-				<a className="btn btn-ghost normal-case text-xl gap-2">
-					<Image src="/logo.png" alt="Vercel Logo" width={32} height={32} />
-					Pokedex
-				</a>
+				<Link href="/">
+					<a className="btn btn-ghost normal-case text-xl gap-2">
+						<Image src="/logo.png" alt="Vercel Logo" width={32} height={32} />
+						Pokedex
+					</a>
+				</Link>
 			</div>
 			<div className="flex-none gap-2">
 				<div className="form-control hidden sm:block">

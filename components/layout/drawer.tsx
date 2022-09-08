@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { FaTimes } from 'react-icons/fa'
 
 import { Navbar } from '@/components/layout/navbar'
