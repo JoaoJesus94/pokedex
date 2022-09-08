@@ -1,0 +1,77 @@
+.tooltip {
+	--tooltip-offset: calc(100% + 4px + var(--tooltip-tail, 0px));
+	--tooltip-tail-offset: calc(100% + 4px - var(--tooltip-tail));
+
+	&-bug {
+		--tooltip-color: #a6b91a;
+		--tooltip-text-color: #000000;
+	}
+	&-dark {
+		--tooltip-color: #705746;
+		--tooltip-text-color: #ffffff;
+	}
+	&-dragon {
+		--tooltip-color: #6f35fc;
+		--tooltip-text-color: #ffffff;
+	}
+	&-electric {
+		--tooltip-color: #f7d02c;
+		--tooltip-text-color: #000000;
+	}
+	&-fairy {
+		--tooltip-color: #d685ad;
+		--tooltip-text-color: #000000;
+	}
+	&-fighting {
+		--tooltip-color: #c22e28;
+		--tooltip-text-color: #ffffff;
+	}
+	&-fire {
+		--tooltip-color: #ee8130;
+		--tooltip-text-color: #000000;
+	}
+	&-flying {
+		--tooltip-color: #a98ff3;
+		--tooltip-text-color: #000000;
+	}
+	&-ghost {
+		--tooltip-color: #735797;
+		--tooltip-text-color: #ffffff;
+	}
+	&-grass {
+		--tooltip-color: #7ac74c;
+		--tooltip-text-color: #000000;
+	}
+	&-ground {
+		--tooltip-color: #e2bf65;
+		--tooltip-text-color: #000000;
+	}
+	&-ice {
+		--tooltip-color: #96d9d6;
+		--tooltip-text-color: #000000;
+	}
+	&-normal {
+		--tooltip-color: #a8a77a;
+		--tooltip-text-color: #000000;
+	}
+	&-poison {
+		--tooltip-color: #a33ea1;
+		--tooltip-text-color: #ffffff;
+	}
+	&-psychic {
+		--tooltip-color: #f95587;
+		--tooltip-text-color: #000000;
+	}
+	&-rock {
+		--tooltip-color: #b6a136;
+		--tooltip-text-color: #000000;
+	}
+	&-steel {
+		--tooltip-color: #b7b7ce;
+		--tooltip-text-color: #000000;
+	}
+	&-water {
+		--tooltip-color: #6390f0;
+		--tooltip-text-color: #000000;
+	}
+}
