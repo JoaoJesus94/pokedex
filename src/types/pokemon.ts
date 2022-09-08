@@ -19,7 +19,7 @@ export type Pokemon = {
 	abilities: PokemonAbility[]
 	forms: NamedAPIResource[]
 	game_indices: VersionGameIndex[]
-	heldItems: PokemonHeldItem[]
+	held_items: PokemonHeldItem[]
 	location_area_encounters: string
 	moves: PokemonMove[]
 	past_types: PokemonTypePast[]

@@ -1,19 +1,27 @@
 import MockAdapter from 'axios-mock-adapter'
 
-import { fetchPokemons } from '@/api/pokemon'
+import { fetchPokemon, fetchPokemons } from '@/api/pokemon'
 
 import axios from '@/lib/axios'
 
-import { mockedPokemonListResponse } from '@/mocks/mockedPokemonListResponse'
+import { mockedPokemonListResponse, mockedPokemonResponse } from '@/mocks/mockedPokemonListResponse'
 
 const mockedAxios = new MockAdapter(axios)
 
-describe('fetchPokemons()', () => {
+describe('API | Pokemons', () => {
 	it('should return pokemon list', async () => {
 		mockedAxios.onGet('/pokemon').reply(200, mockedPokemonListResponse)
 
 		const response = await fetchPokemons()
 
 		expect(response).toStrictEqual(mockedPokemonListResponse)
+	})
+
+	it('should return pokemon', async () => {
+		mockedAxios.onGet('/pokemon/charmander').reply(200, mockedPokemonResponse)
+
+		const response = await fetchPokemon('charmander')
+
+		expect(response).toStrictEqual(mockedPokemonResponse)
 	})
 })
