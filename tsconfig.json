@@ -9,7 +9,9 @@
 			"@/api/*": ["api/*"],
 			"@/types/*": ["types/*"],
 			"@/utils/*": ["utils/*"],
-			"@/mocks/*": ["__tests__/mocks/*"]
+			"@/mocks/*": ["__tests__/mocks/*"],
+			"@/public/*": ["public/*"],
+			"@/constants/*": ["constants/*"]
 		},
 		"target": "es5",
 		"lib": ["dom", "dom.iterable", "esnext"],
@@ -22,6 +24,8 @@
 		"module": "esnext",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
+		"noUnusedParameters": true,
+		"noUnusedLocals": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
 		"incremental": true
