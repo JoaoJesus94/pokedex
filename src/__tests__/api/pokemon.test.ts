@@ -1,10 +1,10 @@
 import MockAdapter from 'axios-mock-adapter'
 
+import { fetchPokemons } from '@/api/pokemon'
+
 import axios from '@/lib/axios'
 
 import { mockedPokemonListResponse } from '@/mocks/mockedPokemonListResponse'
-
-import { fetchPokemons } from '@/api/pokemon'
 
 const mockedAxios = new MockAdapter(axios)
 

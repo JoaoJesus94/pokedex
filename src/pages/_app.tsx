@@ -3,11 +3,11 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
 
+import { Drawer } from '@/components/layout/drawer'
+
 import { config } from '@/lib/reactQueryConfig'
 
 import '@/styles/globals.css'
-
-import { Drawer } from '@/components/layout/drawer'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	const [queryClient] = useState(() => new QueryClient(config))

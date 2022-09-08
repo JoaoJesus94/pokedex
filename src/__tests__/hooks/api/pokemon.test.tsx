@@ -3,12 +3,12 @@ import { renderHook, waitFor } from '@testing-library/react'
 import MockAdapter from 'axios-mock-adapter'
 import { ReactElement } from 'react'
 
+import { usePokemons } from '@/hooks/api/pokemon'
+
 import axios from '@/lib/axios'
 import { config } from '@/lib/reactQueryConfig'
 
 import { mockedPokemonListResponse } from '@/mocks/mockedPokemonListResponse'
-
-import { usePokemons } from '@/hooks/api/pokemon'
 
 const mockedAxios = new MockAdapter(axios)
 
