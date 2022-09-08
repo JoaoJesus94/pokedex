@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+  viewBox="0 0 24 24" version="1.1">
+  <g id="surface1">
+    <path style=" stroke:none;fill-rule:evenodd;fill:rgb(150, 217, 214);fill-opacity:1;"
+      d="M 18.015625 1.832031 L 18.089844 8.316406 L 12.433594 11.03125 L 12.363281 4.90625 Z M 18.015625 1.832031 " />
+    <path style=" stroke:none;fill-rule:evenodd;fill:rgb(150, 217, 214);fill-opacity:1;"
+      d="M 23.683594 12.050781 L 18.085938 15.25 L 12.480469 12.042969 L 18.082031 9.101562 Z M 23.683594 12.050781 " />
+    <path style=" stroke:none;fill-rule:evenodd;fill:rgb(150, 217, 214);fill-opacity:1;"
+      d="M 11.484375 12.050781 L 5.886719 15.25 L 0.285156 12.042969 L 5.882812 9.101562 Z M 11.484375 12.050781 " />
+    <path style=" stroke:none;fill-rule:evenodd;fill:rgb(150, 217, 214);fill-opacity:1;"
+      d="M 5.824219 1.804688 L 11.636719 4.683594 L 11.488281 10.953125 L 6 8.238281 Z M 5.824219 1.804688 " />
+    <path style=" stroke:none;fill-rule:evenodd;fill:rgb(150, 217, 214);fill-opacity:1;"
+      d="M 18.171875 22.195312 L 12.359375 19.316406 L 12.507812 13.046875 L 17.996094 15.761719 Z M 18.171875 22.195312 " />
+    <path style=" stroke:none;fill-rule:evenodd;fill:rgb(150, 217, 214);fill-opacity:1;"
+      d="M 6.023438 22.253906 L 5.949219 15.769531 L 11.605469 13.054688 L 11.675781 19.175781 Z M 6.023438 22.253906 " />
+  </g>
+</svg>
