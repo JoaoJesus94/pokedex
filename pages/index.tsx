@@ -1,12 +1,13 @@
 import { QueryClient, dehydrate } from '@tanstack/react-query'
 import type { NextPage } from 'next'
+import Head from 'next/head'
 
 import { fetchPokemons } from '@/api/pokemon'
 
-import { usePokemons } from '@/hooks/api/pokemon'
+import { Loader } from '@/components/loader'
+import { PokemonCard } from '@/components/pokemonCard'
 
-import { Loader } from '@/components/Loader'
-import { Card } from '@/components/PokemonCard'
+import { usePokemons } from '@/hooks/api/pokemon'
 
 const Home: NextPage = () => {
 	const { isLoading, data } = usePokemons()
@@ -14,11 +15,16 @@ const Home: NextPage = () => {
 	if (isLoading) <Loader />
 
 	return (
-		<div className="grid gap-4 justify-center grid-cols-[repeat(auto-fit,_minmax(300px,_max-content))]">
-			{data?.results.map(pokemon => (
-				<Card key={pokemon.name} pokemon={pokemon} />
-			))}
-		</div>
+		<>
+			<Head>
+				<title>Pokedex | Home</title>
+			</Head>
+			<div className="grid gap-4 justify-center grid-cols-[repeat(auto-fit,_minmax(300px,_max-content))]">
+				{data?.results.map(pokemon => (
+					<PokemonCard key={pokemon.name} pokemon={pokemon} />
+				))}
+			</div>
+		</>
 	)
 }
 
