@@ -31,7 +31,7 @@ const Home: NextPage = () => {
 export async function getStaticProps() {
 	const queryClient = new QueryClient()
 
-	await queryClient.fetchQuery(['pokemons'], fetchPokemons)
+	await queryClient.prefetchQuery(['pokemons'], fetchPokemons)
 
 	return {
 		props: {

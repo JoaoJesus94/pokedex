@@ -1,7 +1,6 @@
 import { useSwitchTheme } from '../../hooks/switchTheme'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { FaBars, FaMoon, FaSearch, FaSun } from 'react-icons/fa'
 
 export function Navbar() {
