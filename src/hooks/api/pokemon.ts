@@ -1,9 +1,12 @@
-import { useQuery } from '@tanstack/react-query'
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
 
 import { fetchPokemon, fetchPokemons } from '@/api/pokemon'
 
 export function usePokemons() {
-	return useQuery(['pokemons'], fetchPokemons)
+	return useInfiniteQuery(['pokemons'], ({ pageParam }) => fetchPokemons(pageParam), {
+		getNextPageParam: result => new URLSearchParams(result.next?.split('?')[1]).get('offset') ?? undefined,
+		getPreviousPageParam: result => new URLSearchParams(result.previous?.split('?')[1]).get('offset') ?? undefined,
+	})
 }
 
 export function usePokemon(name: string) {
