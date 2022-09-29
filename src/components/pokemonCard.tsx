@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { capitalize } from 'radash'
+import { memo } from 'react'
 
 import { Loader } from '@/components/loader'
 import { PokemonTypeIcon } from '@/components/pokemonTypeIcon'
@@ -8,7 +9,7 @@ import { usePokemon } from '@/hooks/api/pokemon'
 
 import { NamedAPIResource } from '@/types/namedAPIResource'
 
-export function PokemonCard({ pokemon }: { pokemon: NamedAPIResource }) {
+function Card({ pokemon }: { pokemon: NamedAPIResource }) {
 	const { data, isLoading } = usePokemon(pokemon.name)
 
 	if (isLoading) return <Loader />
@@ -38,3 +39,5 @@ export function PokemonCard({ pokemon }: { pokemon: NamedAPIResource }) {
 		</div>
 	)
 }
+
+export const PokemonCard = memo(Card)
