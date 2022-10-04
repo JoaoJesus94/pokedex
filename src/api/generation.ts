@@ -9,7 +9,6 @@ export async function fetchGenerations() {
 }
 
 export async function fetchGeneration(name: string) {
-	if (!name) return null
 	const { data } = await axios.get<Generation>(`/generation/${name}`)
 	return data
 }
