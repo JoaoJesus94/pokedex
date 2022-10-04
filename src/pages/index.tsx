@@ -1,8 +1,7 @@
-import { QueryClient, dehydrate } from '@tanstack/react-query'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-
-import { fetchPokemons } from '@/api/pokemon'
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 import { Loader } from '@/components/loader'
 import { PokemonCard } from '@/components/pokemonCard'
@@ -10,9 +9,15 @@ import { PokemonCard } from '@/components/pokemonCard'
 import { usePokemons } from '@/hooks/api/pokemon'
 
 const Home: NextPage = () => {
-	const { isLoading, data } = usePokemons()
+	const { isLoading, data, isFetchingNextPage, fetchNextPage } = usePokemons()
+	const { ref, inView } = useInView()
+	if (typeof window !== 'undefined') window.scrollTo(0, 0)
 
 	if (isLoading) <Loader />
+
+	useEffect(() => {
+		if (inView) fetchNextPage()
+	}, [inView, fetchNextPage])
 
 	return (
 		<>
@@ -20,24 +25,19 @@ const Home: NextPage = () => {
 				<title>Pokedex | Home</title>
 			</Head>
 			<div className="grid gap-4 justify-center grid-cols-[repeat(auto-fit,_minmax(300px,_max-content))]">
-				{data?.results.map(pokemon => (
-					<PokemonCard key={pokemon.name} pokemon={pokemon} />
-				))}
+				{data?.pages.map(page => {
+					return page?.results.map(pokemon => <PokemonCard key={pokemon.name} pokemon={pokemon} />)
+				})}
+			</div>
+			<div ref={ref} className="flex justify-center py-8">
+				{isFetchingNextPage ? (
+					<button className="btn loading">loading</button>
+				) : (
+					<button className="btn pointer-events-none">Load more</button>
+				)}
 			</div>
 		</>
 	)
-}
-
-export async function getStaticProps() {
-	const queryClient = new QueryClient()
-
-	await queryClient.prefetchQuery(['pokemons'], fetchPokemons)
-
-	return {
-		props: {
-			dehydratedState: dehydrate(queryClient),
-		},
-	}
 }
 
 export default Home
