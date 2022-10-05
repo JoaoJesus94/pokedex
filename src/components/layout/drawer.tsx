@@ -1,5 +1,6 @@
 import { FaTimes } from 'react-icons/fa'
 
+import { GenerationMenu } from '@/components/layout/generationMenu'
 import { Navbar } from '@/components/layout/navbar'
 
 export function Drawer({ children }: { children: React.ReactNode }) {
@@ -18,12 +19,7 @@ export function Drawer({ children }: { children: React.ReactNode }) {
 							<FaTimes size={24} />
 						</label>
 					</li>
-					<li>
-						<a>Sidebar Item 1</a>
-					</li>
-					<li>
-						<a>Sidebar Item 2</a>
-					</li>
+					<GenerationMenu />
 				</ul>
 			</div>
 		</div>

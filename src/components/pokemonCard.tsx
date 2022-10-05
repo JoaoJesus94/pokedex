@@ -9,10 +9,17 @@ import { usePokemon } from '@/hooks/api/pokemon'
 
 import { NamedAPIResource } from '@/types/namedAPIResource'
 
+import { formatPokemonNumber } from '@/utils/formatPokemonNumber'
+
 function Card({ pokemon }: { pokemon: NamedAPIResource }) {
 	const { data, isLoading } = usePokemon(pokemon.name)
 
-	if (isLoading) return <Loader />
+	if (isLoading)
+		return (
+			<div className="card bg-base-100 shadow-xl h-[282px]">
+				<Loader />
+			</div>
+		)
 
 	if (!data) return null
 
@@ -27,6 +34,7 @@ function Card({ pokemon }: { pokemon: NamedAPIResource }) {
 				/>
 			</div>
 			<div className="card-body">
+				<span className="text-accent-content">{formatPokemonNumber(data.id)}</span>
 				<div className="flex justify-between items-center">
 					<h2 className="card-title justify-between">{capitalize(pokemon.name)}</h2>
 					<div className="flex gap-3">
