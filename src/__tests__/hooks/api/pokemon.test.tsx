@@ -3,7 +3,7 @@ import { renderHook, waitFor } from '@testing-library/react'
 import MockAdapter from 'axios-mock-adapter'
 import { ReactElement } from 'react'
 
-import { usePokemon, usePokemons } from '@/hooks/api/pokemon'
+import { useInfinitePokemons, usePokemon } from '@/hooks/api/pokemon'
 
 import axios from '@/lib/axios'
 import { config } from '@/lib/reactQueryConfig'
@@ -18,11 +18,12 @@ const wrapper = ({ children }: { children: ReactElement }) => (
 )
 
 describe('Hooks | API | Pokemon', () => {
-	it('usePokemons should return correct data', async () => {
-		mockedAxios.onGet('/pokemon').reply(200, mockedPokemonListResponse)
+	it.skip('usePokemons should return correct data', async () => {
+		mockedAxios.onGet('/pokemon?offset=0').reply(200, mockedPokemonListResponse)
 
-		const { result } = renderHook(() => usePokemons(), { wrapper })
+		const { result } = renderHook(() => useInfinitePokemons(), { wrapper })
 
+		console.log(result.current.data)
 		await waitFor(() => expect(result.current.data).toStrictEqual(mockedPokemonListResponse))
 	})
 

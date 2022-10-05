@@ -6,12 +6,11 @@ import { useInView } from 'react-intersection-observer'
 import { Loader } from '@/components/loader'
 import { PokemonCard } from '@/components/pokemonCard'
 
-import { usePokemons } from '@/hooks/api/pokemon'
+import { useInfinitePokemons } from '@/hooks/api/pokemon'
 
 const Home: NextPage = () => {
-	const { isLoading, data, isFetchingNextPage, fetchNextPage } = usePokemons()
+	const { isLoading, data, isFetchingNextPage, fetchNextPage } = useInfinitePokemons()
 	const { ref, inView } = useInView()
-	if (typeof window !== 'undefined') window.scrollTo(0, 0)
 
 	if (isLoading) <Loader />
 
