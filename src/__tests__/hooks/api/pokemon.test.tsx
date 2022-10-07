@@ -23,7 +23,6 @@ describe('Hooks | API | Pokemon', () => {
 
 		const { result } = renderHook(() => useInfinitePokemons(), { wrapper })
 
-		console.log(result.current.data)
 		await waitFor(() => expect(result.current.data).toStrictEqual(mockedPokemonListResponse))
 	})
 
