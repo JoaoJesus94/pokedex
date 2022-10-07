@@ -10,5 +10,5 @@ export function useInfinitePokemons() {
 }
 
 export function usePokemon(name: string) {
-	return useQuery(['pokemon', name], () => fetchPokemon(name))
+	return useQuery(['pokemon', name], () => fetchPokemon(name), { suspense: true })
 }
