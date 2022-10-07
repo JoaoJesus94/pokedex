@@ -10,6 +10,8 @@ import { usePokemon } from '@/hooks/api/pokemon'
 
 import { NamedAPIResource } from '@/types/namedAPIResource'
 
+import { formatPokemonNumber } from '@/utils/formatPokemonNumber'
+
 function Card({ pokemon }: { pokemon: NamedAPIResource }) {
 	const { data } = usePokemon(pokemon.name)
 

@@ -8,10 +8,10 @@ import { useInView } from 'react-intersection-observer'
 import { Loader } from '@/components/loader'
 import { PokemonCard, PokemonErrorCard, PokemonLoadingCard } from '@/components/pokemonCard'
 
-import { usePokemons } from '@/hooks/api/pokemon'
+import { useInfinitePokemons } from '@/hooks/api/pokemon'
 
 const Home: NextPage = () => {
-	const { isLoading, data, isFetchingNextPage, fetchNextPage } = usePokemons()
+	const { isLoading, data, isFetchingNextPage, fetchNextPage } = useInfinitePokemons()
 	const { ref, inView } = useInView()
 	const { reset } = useQueryErrorResetBoundary()
 
