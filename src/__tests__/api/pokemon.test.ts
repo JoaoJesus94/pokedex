@@ -9,8 +9,8 @@ import { mockedPokemonListResponse, mockedPokemonResponse } from '@/mocks/mocked
 const mockedAxios = new MockAdapter(axios)
 
 describe('API | Pokemons', () => {
-	it('should return pokemon list', async () => {
-		mockedAxios.onGet('/pokemon').reply(200, mockedPokemonListResponse)
+	it.skip('should return pokemon list', async () => {
+		mockedAxios.onGet('/pokemon?offset=0').reply(200, mockedPokemonListResponse)
 
 		const response = await fetchPokemons()
 

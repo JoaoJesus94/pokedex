@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"test": "jest --watch",
+		"test": "jest",
 		"lint": "next lint",
 		"prepare": "husky install"
 	},
@@ -20,6 +20,7 @@
 		"radash": "^7.1.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"react-error-boundary": "^3.1.4",
 		"react-icons": "^4.4.0",
 		"react-intersection-observer": "^9.4.0"
 	},
